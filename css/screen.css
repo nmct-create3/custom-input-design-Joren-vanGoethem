@@ -14,6 +14,7 @@
     src: url("../fonts/Inter-SemiBold.woff2") format("woff2")
 }
 
+
 /*------------------------------------*\
 #Variables
 \*------------------------------------*/
@@ -26,7 +27,6 @@
     --global-color-alpha-x-dark: #1B4186;
     --global-color-alpha-transparent: #3385ffbf;
     --global-color-alpha-x-transparent: #3385ff4d;
-
     --global-color-neutral-xxxx-light: #F5F6FA;
     --global-color-neutral-xxx-light: #E2E3E7;
     --global-color-neutral-xx-light: #caccd4;
@@ -38,29 +38,40 @@
     --global-color-neutral-xx-dark: #4b4c60;
     --global-color-neutral-xxx-dark: #35374d;
     --global-color-neutral-xxxx-dark: #20223a;
-
     /* border stuff */
     --global-borderRadius: 3px;
     --global-borderWidth: 1px;
-
     /* transitions */
     --global-transitionTiming-alpha: .1s ease-out;
-
     /* Baseline settings */
-    --global-baseline: 8px;         
-    --global-whitespace: calc(var(--global-baseline) * 3); /* = 24px */
-
-    --global-whitespace-xs: calc(var(--global-baseline) / 2); /* = 4px */
-    --global-whitespace-sm: calc(var(--global-baseline) * 1); /*  = 8px */
-    --global-whitespace-md: calc(var(--global-baseline) * 2); /*  = 16px */
-    --global-whitespace-lg: calc(var(--global-baseline) * 4); /*  = 32px */
-    --global-whitespace-xl: calc(var(--global-whitespace) * 2); /*  = 48px */
-    --global-whitespace-xxl: calc(var(--global-whitespace) * 3); /*  = 72px */
+    --global-baseline: 8px;
+    --global-whitespace: calc(var(--global-baseline) * 3);
+    /* = 24px */
+    --global-whitespace-xs: calc(var(--global-baseline) / 2);
+    /* = 4px */
+    --global-whitespace-sm: calc(var(--global-baseline) * 1);
+    /*  = 8px */
+    --global-whitespace-md: calc(var(--global-baseline) * 2);
+    /*  = 16px */
+    --global-whitespace-lg: calc(var(--global-baseline) * 4);
+    /*  = 32px */
+    --global-whitespace-xl: calc(var(--global-whitespace) * 2);
+    /*  = 48px */
+    --global-whitespace-xxl: calc(var(--global-whitespace) * 3);
+    /*  = 72px */
+    --global-input-backgroundColor: White;
+    --global-input-color: var(--global-color-neutral-xxxx-dark);
+    --global-input-borderColor: var(--global-color-neutral-xxx-light);
+    --global-input-hover-borderColor: var(--global-color-neutral-xx-light);
+    --global-input-focus-borderColor: var(--global-color-alpha);
+    --global-input-boxShadow: 0 0 0 3px var(--global-color-alpha-x-transparent);
 }
+
 
 /*------------------------------------*\
 #GENERIC
 \*------------------------------------*/
+
 
 /*
     Generic: Page
@@ -76,7 +87,7 @@ html {
     background-color: var(--global-color-neutral-xxxx-light);
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;    
+    -moz-osx-font-smoothing: grayscale;
 }
 
 *,
@@ -84,6 +95,7 @@ html {
 *:after {
     box-sizing: inherit;
 }
+
 
 /*
 * Remove text-shadow in selection highlight:
@@ -104,9 +116,11 @@ html {
     text-shadow: none;
 }
 
+
 /*------------------------------------*\
 #Elements
 \*------------------------------------*/
+
 
 /*
 Elements: Images
@@ -118,6 +132,7 @@ img {
     max-width: 100%;
     vertical-align: top;
 }
+
 
 /*
     Elements: typography
@@ -231,9 +246,11 @@ input::placeholder {
     color: var(--global-color-neutral-x-light);
 }
 
+
 /*------------------------------------*\
 #OBJECTS
 \*------------------------------------*/
+
 
 /*
     Objects: Row
@@ -255,6 +272,7 @@ input::placeholder {
     align-items: center;
 }
 
+
 /* size modifiers */
 
 .o-row--lg {
@@ -269,6 +287,7 @@ input::placeholder {
     }
 }
 
+
 /*
     Objects: Container
     ---
@@ -278,9 +297,11 @@ input::placeholder {
 .o-container {
     margin-left: auto;
     margin-right: auto;
-    max-width: 79.5em; /* 79.5 * 16px = 1272 */
+    max-width: 79.5em;
+    /* 79.5 * 16px = 1272 */
     width: 100%;
 }
+
 
 /*
     Objects: section
@@ -292,22 +313,23 @@ input::placeholder {
     position: relative;
 }
 
-.o-section + .o-section {
+.o-section+.o-section {
     padding-top: var(--global-whitespace);
 }
 
 @media (min-width: 768px) {
-    .o-section--lg + .o-section--lg,
-    .o-section--xl + .o-section--xl {
+    .o-section--lg+.o-section--lg,
+    .o-section--xl+.o-section--xl {
         padding-top: var(--global-whitespace-lg);
     }
 }
 
 @media (min-width: 992px) {
-    .o-section--xl + .o-section--xl {
+    .o-section--xl+.o-section--xl {
         padding-top: var(--global-whitespace-xxl);
     }
 }
+
 
 /*
     Objects: Layout
@@ -328,13 +350,14 @@ input::placeholder {
     width: 100%;
 }
 
+
 /* gutter modifiers, these affect o-layout__item too */
 
 .o-layout--gutter {
     margin: 0 -12px;
 }
 
-.o-layout--gutter > .o-layout__item {
+.o-layout--gutter>.o-layout__item {
     padding: 0 12px;
 }
 
@@ -342,7 +365,7 @@ input::placeholder {
     margin: 0 -6px;
 }
 
-.o-layout--gutter-sm > .o-layout__item {
+.o-layout--gutter-sm>.o-layout__item {
     padding: 0 6px;
 }
 
@@ -350,7 +373,7 @@ input::placeholder {
     margin: 0 calc(var(--global-whitespace) * -1);
 }
 
-.o-layout--gutter-lg > .o-layout__item {
+.o-layout--gutter-lg>.o-layout__item {
     padding: 0 var(--global-whitespace);
 }
 
@@ -358,15 +381,17 @@ input::placeholder {
     margin: 0 calc(var(--global-whitespace-lg) * -1);
 }
 
-.o-layout--gutter-xl > .o-layout__item {
+.o-layout--gutter-xl>.o-layout__item {
     padding: 0 var(--global-whitespace-lg);
 }
+
 
 /* reverse horizontal row modifier */
 
 .o-layout--row-reverse {
     flex-direction: row-reverse;
 }
+
 
 /* Horizontal alignment modifiers*/
 
@@ -394,6 +419,7 @@ input::placeholder {
     justify-content: space-between;
 }
 
+
 /* Vertical alignment modifiers */
 
 .o-layout--align-start {
@@ -411,6 +437,7 @@ input::placeholder {
 .o-layout--align-baseline {
     align-items: baseline;
 }
+
 
 /* Vertical alignment modifiers that only work if there is one than one flex item */
 
@@ -434,6 +461,7 @@ input::placeholder {
     align-content: space-between;
 }
 
+
 /*
     Objects: List
     ---
@@ -444,6 +472,7 @@ input::placeholder {
     list-style: none;
     padding: 0;
 }
+
 
 /*
     Object: Button reset
@@ -458,21 +487,18 @@ input::placeholder {
     width: auto;
     overflow: visible;
     background: transparent;
-
     /* inherit font & color from ancestor */
     color: inherit;
     font: inherit;
-
     /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
     line-height: normal;
-
     /* Corrects font smoothing for webkit */
     -webkit-font-smoothing: inherit;
     -moz-osx-font-smoothing: inherit;
-
     /* Corrects inability to style clickable `input` types in iOS */
     -webkit-appearance: none;
 }
+
 
 /*
     Object: Hide accessible
@@ -491,9 +517,11 @@ input::placeholder {
     border: 0;
 }
 
+
 /*------------------------------------*\
 #COMPONENTS
 \*------------------------------------*/
+
 
 /*
     Component: Logo
@@ -525,6 +553,7 @@ input::placeholder {
     fill: var(--color-alpha-x-dark);
 }
 
+
 /*
     Component: Card
     ---
@@ -535,11 +564,13 @@ input::placeholder {
     background-color: White;
     margin-bottom: var(--global-whitespace);
     border-radius: var(--global-borderRadius);
-    box-shadow: 0 0 0 var(--global-borderWidth) rgba(0,0,0, 0.05), 0 2px 4px rgba(0,0,0,.075);
+    box-shadow: 0 0 0 var(--global-borderWidth) rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, .075);
     overflow: hidden;
 }
 
+
 /* Add padding to child for more flexibility */
+
 .c-card__body,
 .c-card__footer {
     padding: var(--global-whitespace);
@@ -557,12 +588,13 @@ input::placeholder {
     font-weight: 600;
 }
 
+
 /* This allows c-card__body and __footer to have equal padding everywhere */
 
-.c-card__body > *:last-child,
-.c-card__footer > *:last-child,
-.c-card__body > *:last-child > *:last-child,
-.c-card__footer > *:last-child > *:last-child {
+.c-card__body>*:last-child,
+.c-card__footer>*:last-child,
+.c-card__body>*:last-child>*:last-child,
+.c-card__footer>*:last-child>*:last-child {
     margin-bottom: 0;
 }
 
@@ -570,11 +602,11 @@ input::placeholder {
     .c-card__body {
         padding: var(--global-whitespace-xl);
     }
-
     .c-card__title {
         margin-bottom: var(--global-whitespace-xl);
     }
 }
+
 
 /*
     Component: Forms
@@ -590,6 +622,106 @@ input::placeholder {
     align-items: center;
 }
 
+
+
+
+
+/*
+    Component: Custom select
+    ---
+    Class to put on all input="text" like form inputs
+*/
+
+.c-custom-select{
+    display: block;
+}
+
+.c-custom-select .c-custom-select__symbol{
+    width: 24px;
+    height: 24px;
+    fill: grey;
+    margin: 10px;
+    margin-left: -35px;
+    position: absolute;
+}
+
+/*
+    Component: Custom toggle
+    ---
+    Class to put on all input="text" like form inputs
+*/
+.c-custom-toggle{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.c-custom-toggle__fake-input {
+    width: 48px;
+    height: 23.9px;
+    border-radius: 45px;
+    background-color: var(--global-color-neutral-xxxx-light);
+    border: 1px solid var(--global-color-neutral-xxx-light);
+}
+
+.c-custom-toggle__fake-input::after {
+    transition: all var(--transitionTiming-alpha);
+    content: "";
+    width: 22px;
+    height: 22px;
+    border-radius: 45px;
+    background-color: #FFF;
+    box-shadow: 0 0px 4px #00000016;
+    display: block;
+}
+
+.c-option--hidden:checked + .c-custom-toggle .c-custom-toggle__fake-input{
+    transition: all var(--transitionTiming-alpha);   
+    background-color: var(--global-color-alpha);
+    border-color: var(--global-color-alpha);
+}
+
+.c-option--hidden:checked + .c-custom-toggle .c-custom-toggle__fake-input::after{
+    transition: all var(--transitionTiming-alpha);   
+    transform: translateX(24px);
+}
+
+.c-option--hidden:focus + .c-custom-toggle .c-custom-toggle__fake-input{
+    transition: all var(--transitionTiming-alpha);   
+    box-shadow: 0 0 1PX 2px var(--global-color-alpha);
+}
+
+.c-option--hidden:active + .c-custom-toggle .c-custom-toggle__fake-input::after {
+    width: 27px;
+    transition: all var(--transitionTiming-alpha);
+}
+
+.c-option--hidden:active:checked + .c-custom-toggle .c-custom-toggle__fake-input::after{
+    width: 27px;
+    transform: translateX(19px);
+    transition: all var(--transitionTiming-alpha);
+}
+
+.c-toggle-list__item + .c-toggle-list__item{
+    margin: 10px 0;
+}
+
+.c-custom-toggle--inverted{
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.c-custom-toggle--inverted .c-custom-toggle__fake-input {
+    width: 48px;
+    height: 23.9px;
+    border-radius: 45px;
+    margin-right: 0;
+    background-color: var(--global-color-neutral-xxxx-light);
+    border: 1px solid var(--global-color-neutral-xxx-light);
+}
+
 /*
     Component: Input
     ---
@@ -601,9 +733,9 @@ input::placeholder {
     -moz-appearance: none;
     appearance: none;
     width: 100%;
-    border: var(--global-borderWidth) solid var(--global-color-neutral-xxx-light);
-    border-radius: var(--global-borderRadius);
-    color: var(--global-color-neutral-xxxx-dark);
+    border: var(--global-borderWidth) solid var(--global-input-borderColor);
+    border-radius: var(--global-input-backgroundColor);
+    color: var(--global-input-color);
     background-color: White;
     font-family: inherit;
     font-size: 16px;
@@ -614,20 +746,83 @@ input::placeholder {
 }
 
 .c-input:hover {
-    border-color: var(--global-color-neutral-xx-light);
+    border-color: var(--global-input-hover-borderColor);
 }
 
 .c-input:focus,
 .c-input:active {
-    border-color: var(--global-color-alpha);
-    box-shadow: 0 0 0 3px var(--global-color-alpha-x-transparent);
+    border-color: var(--global-input-hover-borderColor);
+    box-shadow: 0 0 0 3px var(--global-input-boxShadow);
 }
+
 
 /* option input for checkboxes and radio buttons */
 
 .c-option {
     margin-right: var(--global-whitespace-sm);
 }
+
+.c-custom-option {
+    --custom-option-borderColor: var(--global-input-borderColor);
+    --custom-option-focus-borderColor: var(--global-input-focus-borderColor);
+    display: flex;
+    align-items: center;
+    padding: 4px 0;
+}
+
+.c-custom-option:hover {
+    --custom-option-borderColor: var(--global-color-alpha-dark);
+  }
+
+.c-custom-option__symbol {
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.c-option--hidden:checked+.c-custom-option .c-custom-option__symbol {
+    opacity: 100;
+    transition: 0.3s;
+}
+
+.c-custom-option__fake-input {
+    display: flex;
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--custom-option-borderColor);;
+    margin-right: 8px;
+    border-radius: var(--global-borderRadius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.c-custom-option__fake-input--radio {
+    border-radius: 10px;
+}
+
+.c-option--hidden:checked+.c-custom-option {}
+
+.c-option--hidden:focus+.c-custom-option .c-custom-option__fake-input {
+    box-shadow: var(--global-input-boxShadow);
+}
+
+.c-option--hidden:focus+.c-custom-option .c-custom-option__symbol {
+    /* box-shadow: var(--global-input-boxShadow); */
+}
+
+.c-custom-option__fake-input--checkbox .c-custom-option__symbol {
+    width: 10px;
+    height: 10px;
+    fill: var(--global-color-alpha);
+}
+
+.c-custom-option__fake-input--radio .c-custom-option__symbol {
+    width: 6px;
+    height: 6px;
+    background-color: var(--global-color-alpha);
+    border-radius: 10px;
+}
+
 
 /*
     Component: Label
@@ -638,7 +833,7 @@ input::placeholder {
 .c-label {
     margin-bottom: 0;
     font-size: 14px;
-    padding-bottom: var(--global-whitespace-xs);    
+    padding-bottom: var(--global-whitespace-xs);
     line-height: calc(var(--global-baseline) * 2);
     color: var(--global-color-neutral-xx-dark);
 }
@@ -646,6 +841,7 @@ input::placeholder {
 .c-label--option {
     padding-bottom: 0;
 }
+
 
 /*
     Component: Button
@@ -680,9 +876,24 @@ input::placeholder {
     box-shadow: none;
 }
 
+
+
+
+
+.c-option-list{
+    margin-bottom: 24px;
+}
+
+.c-option-list__item{
+    margin-bottom: 12px;
+}
+
+
+
 /*------------------------------------*\
 #UTILITIES
 \*------------------------------------*/
+
 
 /*
     Utilities: color
@@ -697,6 +908,7 @@ input::placeholder {
 .u-color-neutral-dark {
     color: var(--global-color-neutral-dark);
 }
+
 
 /*
     Utilities: spacing
@@ -735,6 +947,7 @@ input::placeholder {
 .u-mb-xl {
     margin-bottom: var(--global-whitespace-xl) !important;
 }
+
 
 /*
     Utilities: max-width
@@ -777,6 +990,7 @@ input::placeholder {
     margin: 0 auto;
 }
 
+
 /*
     Utilities: text
     Utility classes to create smaller or bigger test
@@ -785,6 +999,7 @@ input::placeholder {
 .u-text-sm {
     font-size: 14px;
 }
+
 
 /*
     Utility: Widths
@@ -985,9 +1200,11 @@ input::placeholder {
     }
 }
 
+
 /*------------------------------------*\
 #MEDIA
 \*------------------------------------*/
+
 
 /*
     Media Queries
@@ -997,25 +1214,31 @@ input::placeholder {
     USE THEM INLINE!
 */
 
+
 /* Extra small devices (portrait phones, less than 576px)
 No media query since this is the default in mobile first design
 */
+
 
 /* Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {}
 */
 
+
 /* Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {}
 */
+
 
 /* Large devices (landscape tablets, desktops, 992px and up)
 @media (min-width: 992px) {}
 */
 
+
 /* Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {}
 */
+
 
 /*
     Print styles.
