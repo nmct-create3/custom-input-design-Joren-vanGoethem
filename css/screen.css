@@ -118,6 +118,13 @@
         border-color: var(--global-color-alpha);
         box-shadow: 0 0 0 1px var(--global-color-alpha);
     }
+
+    span.c-custom-option__fake-input{
+        border: none;
+        background-color: var(--global-color-neutral-xxxx-dark);
+    }
+
+
 }
 
 /* #endregion */
